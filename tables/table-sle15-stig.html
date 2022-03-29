@@ -2235,7 +2235,9 @@ To make sure that the setting is persistent, add the following line to a file in
 <td>The SUSE operating system must remove all outdated software components after updated versions have been installed.</td>
 <td><pre>Previous versions of software components that are not removed from the information
 system after updates have been installed may be exploited by some adversaries.</pre></td>
-<td><pre>
+<td><pre>Verify SUSE Linux Enterprise 15 removes all software components after updated versions have been installed.
+
+
 To verify that solver.upgradeRemoveDroppedPackages is configured properly, run the
 following command:
 $ grep -i upgradeRemoveDroppedPackages /etc/zypp/zypp.conf
