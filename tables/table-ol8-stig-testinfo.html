@@ -8585,6 +8585,36 @@ devices.</td>
 <td></td>
 </tr>
 <tr>
+<td>vlock_installed</td>
+<td>medium</td>
+<td>Check that vlock is installed to allow session locking</td>
+<td>A session lock is a temporary action taken when a user stops work and
+moves away from the immediate physical vicinity of the information
+system but does not want to log out because of the temporary nature of
+the absence.
+
+The session lock is implemented at the point where session activity can
+be determined.
+
+Regardless of where the session lock is determined and implemented,
+once invoked, the session lock must remain in place until the user
+reauthenticates. No other activity aside from reauthentication must
+unlock the system.</td>
+<td>The Oracle Linux 8 operating system must have vlock installed to allow for session locking.
+
+
+The <code>kbd</code> package can be installed with the following command:
+<pre>
+$ sudo yum install kbd</pre>
+</td>
+<td></td>
+<td>SRG-OS-000028-GPOS-00009<br>SRG-OS-000030-GPOS-00011<br>SRG-OS-000031-GPOS-00012<br>
+</td>
+<td>CCI-000056<br>CCI-000058<br>CCI-000060<br>
+</td>
+<td></td>
+</tr>
+<tr>
 <td>wireless_disable_interfaces</td>
 <td>medium</td>
 <td>Deactivate Wireless Network Interfaces</td>
