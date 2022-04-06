@@ -8035,6 +8035,89 @@ The configuration that was used to build kernel is available at <code>/boot/conf
     </td>
 </tr>
 <tr>
+<td>CCE-89378-4</td>
+<td>Enable module signature verification</td>
+<td>Check modules for valid signatures upon load.
+Note that this option adds the OpenSSL development packages as a kernel build dependency so
+that the signing tool can use its crypto library.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_MODULE_SIG</code>, run the following command:
+    <code>grep CONFIG_MODULE_SIG /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-89615-9</td>
+<td>Enable automatic signing of all modules</td>
+<td>Sign all modules during make modules_install. Without this option, modules must be signed
+manually, using the scripts/sign-file tool.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_MODULE_SIG_ALL</code>, run the following command:
+    <code>grep CONFIG_MODULE_SIG_ALL /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-89459-2</td>
+<td>Require modules to be validly signed</td>
+<td>Reject unsigned modules or signed modules with an unknown key.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_MODULE_SIG_FORCE</code>, run the following command:
+    <code>grep CONFIG_MODULE_SIG_FORCE /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-89843-7</td>
+<td>Specify the hash to use when signing modules</td>
+<td>This configures the kernel to build and sign modules using
+<xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref="var_kernel_config_module_sig_hash"></xccdf-1.1:sub> as the hash function.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_MODULE_SIG_HASH</code>, run the following command:
+    <code>grep CONFIG_MODULE_SIG_HASH /boot/config-*</code>
+    
+    For each kernel installed, a line with value "<xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref="var_kernel_config_module_sig_hash"></xccdf-1.1:sub>" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-90000-1</td>
+<td>Specify module signing key to use</td>
+<td>Setting this option to something other than its default of <code>certs/signing_key.pem</code> will
+disable the autogeneration of signing keys and allow the kernel modules to be signed with a key
+of your choosing.
+
+The string provided should identify a file containing both a private key and
+its corresponding X.509 certificate in PEM form, or — on systems where the OpenSSL ENGINE_pkcs11
+is functional — a PKCS#11 URI as defined by RFC7512. In the latter case, the PKCS#11 URI should
+reference both a certificate and a private key.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_MODULE_SIG_KEY</code>, run the following command:
+    <code>grep CONFIG_MODULE_SIG_KEY /boot/config-*</code>
+    
+    For each kernel installed, a line with value "<xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref="var_kernel_config_module_sig_key"></xccdf-1.1:sub>" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-89692-8</td>
+<td>Sign kernel modules with SHA-512</td>
+<td>This configures the kernel to build and sign modules using SHA512 as the hash function.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_MODULE_SIG_SHA512</code>, run the following command:
+    <code>grep CONFIG_MODULE_SIG_SHA512 /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
 <td>CCE-88426-2</td>
 <td>Enable poison of pages after freeing</td>
 <td>Fill the pages with poison patterns after free_pages() and verify the patterns before
@@ -8312,6 +8395,19 @@ This configuration is available from kernel 4.11.
 The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
     To check the configuration value for <code>CONFIG_STRICT_KERNEL_RWX</code>, run the following command:
     <code>grep CONFIG_STRICT_KERNEL_RWX /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-89227-3</td>
+<td>Make the module text and rodata read-only</td>
+<td>When set, module text and rodata memory will be made read-only, and non-text memory will be made non-executable.
+This configuration is available from kernel 4.11.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_STRICT_MODULE_RWX</code>, run the following command:
+    <code>grep CONFIG_STRICT_MODULE_RWX /boot/config-*</code>
     
     For each kernel installed, a line with value "y" should be returned.
     </td>
