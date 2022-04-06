@@ -6932,6 +6932,46 @@ The configuration that was used to build kernel is available at <code>/boot/conf
     </td>
 </tr>
 <tr>
+<td>CCE-86449-6</td>
+<td>Enable seccomp to safely compute untrusted bytecode</td>
+<td>This kernel feature is useful for number crunching applications that may need to compute
+untrusted bytecode during their execution. By using pipes or other transports made available
+to the process as file descriptors supporting the read/write syscalls, it's possible to isolate
+those applications in their own address space using seccomp.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_SECCOMP</code>, run the following command:
+    <code>grep CONFIG_SECCOMP /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-86489-2</td>
+<td>Enable use of Berkeley Packet Filter with seccomp</td>
+<td>Enable tasks to build secure computing environments defined in terms of Berkeley Packet Filter
+programs which implement task-defined system call filtering polices.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_SECCOMP_FILTER</code>, run the following command:
+    <code>grep CONFIG_SECCOMP_FILTER /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-86571-7</td>
+<td>Enable different security models</td>
+<td>This allows you to choose different security modules to be configured into your kernel.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_SECURITY</code>, run the following command:
+    <code>grep CONFIG_SECURITY /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
 <td>CCE-87337-2</td>
 <td>Restrict unprivileged access to the kernel syslog</td>
 <td>Enforce restrictions on unprivileged users reading the kernel syslog via dmesg(8).
@@ -6942,6 +6982,32 @@ The configuration that was used to build kernel is available at <code>/boot/conf
     
     Configs with value 'n' are not explicitly set in the file, so either commented lines or no
     lines should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-86883-6</td>
+<td>Disable mutable hooks</td>
+<td>Ensure kernel structures associated with LSMs are always mapped as read-only after system boot.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_SECURITY_WRITABLE_HOOKS</code>, run the following command:
+    <code>grep CONFIG_SECURITY_WRITABLE_HOOKS /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-86715-0</td>
+<td>Enable Yama support</td>
+<td>This enables support for LSM module Yama, which extends DAC support with additional system-wide
+security settings beyond regular Linux discretionary access controls. The module will limit the
+use of the system call <code>ptrace()</code>.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_SECURITY_YAMA</code>, run the following command:
+    <code>grep CONFIG_SECURITY_YAMA /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
     </td>
 </tr>
 <tr>
