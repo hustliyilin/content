@@ -8955,6 +8955,26 @@ unnecessarily rely on DHCP for this information.
   </td>
 </tr>
 <tr>
+  <td>IA-7<br/>IA-7.1</td>
+  <td>Remove the Kerberos Server Package</td>
+  <td xml:lang="en-US">
+The <tt>krb5-server</tt> package should be removed if not in use.
+Is this system the Kerberos server? If not, remove the package.
+The <code>krb5-server</code> package can be removed with the following command:
+<pre>
+$ sudo yum erase krb5-server</pre>
+The krb5-server RPM is not installed by default on a Oracle Linux 7
+system. It is needed only by the Kerberos servers, not by the
+clients which use Kerberos for authentication. If the system is not
+intended for use as a Kerberos Server it should be removed.
+  </td>
+  <td xml:lang="en-US">
+Unnecessary packages should not be installed to decrease the attack
+surface of the system.  While this software is clearly essential on an KDC
+server, it is not necessary on typical desktop or workstation systems.
+  </td>
+</tr>
+<tr>
   <td>CM-7(a)<br/>CM-7(b)<br/>CM-6(a)</td>
   <td>Disable X Windows Startup By Setting Default Target</td>
   <td xml:lang="en-US">
