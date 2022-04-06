@@ -464,6 +464,7 @@ kernel_config_fortify_source
 kernel_config_hardened_usercopy
 kernel_config_hardened_usercopy_fallback
 kernel_config_hibernation
+kernel_config_ipv6
 kernel_config_kexec
 kernel_config_legacy_ptys
 kernel_config_legacy_vsyscall_emulate
@@ -484,6 +485,7 @@ kernel_config_slub_debug
 kernel_config_stackprotector
 kernel_config_stackprotector_strong
 kernel_config_strict_kernel_rwx
+kernel_config_syn_cookies
 kernel_config_vmap_stack
 kernel_config_x86_vsyscall_emulation
 kernel_module_atm_disabled

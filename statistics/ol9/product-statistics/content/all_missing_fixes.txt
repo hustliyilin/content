@@ -26,6 +26,7 @@ kernel_config_debug_notifiers
 kernel_config_debug_sg
 kernel_config_devkmem
 kernel_config_hibernation
+kernel_config_ipv6
 kernel_config_kexec
 kernel_config_legacy_ptys
 kernel_config_page_poisoning_no_sanity
@@ -34,6 +35,7 @@ kernel_config_proc_kcore
 kernel_config_retpoline
 kernel_config_security_dmesg_restrict
 kernel_config_slub_debug
+kernel_config_syn_cookies
 kernel_config_x86_vsyscall_emulation
 kernel_disable_entropy_contribution_for_solid_state_drives
 no_all_squash_exports

@@ -4973,6 +4973,19 @@ The configuration that was used to build kernel is available at <code>/boot/conf
 </tr>
 <tr>
 <td></td>
+<td>Disable the IPv6 protocol</td>
+<td>Disable support for IP version 6 (IPv6).
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_IPV6</code>, run the following command:
+    <code>grep CONFIG_IPV6 /boot/config-*</code>
+    
+    Configs with value 'n' are not explicitly set in the file, so either commented lines or no
+    lines should be returned.
+    </td>
+</tr>
+<tr>
+<td></td>
 <td>Disable kexec system call</td>
 <td>
 <code>kexec</code> is a system call that implements the ability to shutdown your current kernel,
@@ -5083,6 +5096,23 @@ The configuration that was used to build kernel is available at <code>/boot/conf
     
     Configs with value 'n' are not explicitly set in the file, so either commented lines or no
     lines should be returned.
+    </td>
+</tr>
+<tr>
+<td></td>
+<td>Enable TCP/IP syncookie support</td>
+<td>Normal TCP/IP networking is open to an attack known as SYN flooding.
+It is denial-of-service attack that prevents legitimate remote users from being able to connect
+to your computer during an ongoing attack.
+
+When enabled the TCP/IP stack will use a cryptographic challenge protocol known as SYN cookies
+to enable legitimate users to continue to connect, even when your machine is under attack.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_SYN_COOKIES</code>, run the following command:
+    <code>grep CONFIG_SYN_COOKIES /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
     </td>
 </tr>
 <tr>
