@@ -6653,6 +6653,22 @@ The configuration that was used to build kernel is available at <code>/boot/conf
     </td>
 </tr>
 <tr>
+<td>CCE-87765-4</td>
+<td>Disable kernel support for MISC binaries</td>
+<td>Enabling <code>CONFIG_BINFMT_MISC</code> makes it possible to plug wrapper-driven binary formats
+into the kernel. This is specially useful for programs that need an interpreter to run like
+Java, Python and DOS emulators. Once you have registered such a binary class with the kernel,
+you can start one of those programs simply by typing in its name at a shell prompt.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_BINFMT_MISC</code>, run the following command:
+    <code>grep CONFIG_BINFMT_MISC /boot/config-*</code>
+    
+    Configs with value 'n' are not explicitly set in the file, so either commented lines or no
+    lines should be returned.
+    </td>
+</tr>
+<tr>
 <td>CCE-88961-8</td>
 <td>Disable compatibility with brk()</td>
 <td>Enabling compatiliby with <code>brk()</code> allows legacy binaries to run (i.e. those linked
@@ -6782,6 +6798,51 @@ The configuration that was used to build kernel is available at <code>/boot/conf
     <code>grep CONFIG_HARDENED_USERCOPY /boot/config-*</code>
     
     For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-87607-8</td>
+<td>Disable hibernation</td>
+<td>Enable the suspend to disk (STD) functionality, which is usually called "hibernation" in user
+interfaces. STD checkpoints the system and powers it off; and restores that checkpoint on
+reboot.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_HIBERNATION</code>, run the following command:
+    <code>grep CONFIG_HIBERNATION /boot/config-*</code>
+    
+    Configs with value 'n' are not explicitly set in the file, so either commented lines or no
+    lines should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-87486-7</td>
+<td>Disable kexec system call</td>
+<td>
+<code>kexec</code> is a system call that implements the ability to shutdown your current kernel,
+and to start another kernel. It is like a reboot but it is independent of the system firmware.
+And like a reboot you can start any kernel with it, not just Linux.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_KEXEC</code>, run the following command:
+    <code>grep CONFIG_KEXEC /boot/config-*</code>
+    
+    Configs with value 'n' are not explicitly set in the file, so either commented lines or no
+    lines should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-87924-7</td>
+<td>Disable legacy (BSD) PTY support</td>
+<td>Disable the Linux traditional BSD-like terminal names /dev/ptyxx for masters and /dev/ttyxx for
+slaves of pseudo terminals, and use only the modern ptys (devpts) interface.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_LEGACY_PTYS</code>, run the following command:
+    <code>grep CONFIG_LEGACY_PTYS /boot/config-*</code>
+    
+    Configs with value 'n' are not explicitly set in the file, so either commented lines or no
+    lines should be returned.
     </td>
 </tr>
 <tr>

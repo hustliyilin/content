@@ -172,6 +172,7 @@ install_PAE_kernel_on_x86-32
 iptables_sshd_disabled
 kerberos_disable_no_keytab
 kernel_config_acpi_custom_method
+kernel_config_binfmt_misc
 kernel_config_compat_brk
 kernel_config_compat_vdso
 kernel_config_debug_credentials
@@ -180,6 +181,9 @@ kernel_config_debug_list
 kernel_config_debug_notifiers
 kernel_config_debug_sg
 kernel_config_devkmem
+kernel_config_hibernation
+kernel_config_kexec
+kernel_config_legacy_ptys
 kernel_config_page_poisoning_no_sanity
 kernel_config_page_poisoning_zero
 kernel_config_proc_kcore

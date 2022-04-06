@@ -67,6 +67,7 @@ grub2_spec_store_bypass_disable_argument
 grub2_spectre_v2_argument
 iptables_sshd_disabled
 kernel_config_acpi_custom_method
+kernel_config_binfmt_misc
 kernel_config_compat_brk
 kernel_config_compat_vdso
 kernel_config_debug_credentials
@@ -75,6 +76,9 @@ kernel_config_debug_list
 kernel_config_debug_notifiers
 kernel_config_debug_sg
 kernel_config_devkmem
+kernel_config_hibernation
+kernel_config_kexec
+kernel_config_legacy_ptys
 kernel_config_page_poisoning_no_sanity
 kernel_config_page_poisoning_zero
 kernel_config_proc_kcore
