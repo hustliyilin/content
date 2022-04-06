@@ -7863,6 +7863,90 @@ The configuration that was used to build kernel is available at <code>/boot/conf
     </td>
 </tr>
 <tr>
+<td>CCE-87035-2</td>
+<td>Generate some entropy during boot and runtime</td>
+<td>Instrument some kernel code to extract some entropy from both original and artificially created
+program state. This will help especially embedded systems where there is little 'natural' source
+of entropy normally.
+
+This configuration is available from kernel 4.9, but may be available if backported
+by distros.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_GCC_PLUGIN_LATENT_ENTROPY</code>, run the following command:
+    <code>grep CONFIG_GCC_PLUGIN_LATENT_ENTROPY /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-87109-5</td>
+<td>Randomize layout of sensitive kernel structures</td>
+<td>Randomize at compile-time the layouts of structures that are entirely function pointers
+(and have not been manually annotated with __no_randomize_layout), or structures that have
+been explicitly marked with __randomize_layout.
+This configuration is available from kernel 4.13, but may be available if backported
+by distros.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_GCC_PLUGIN_RANDSTRUCT</code>, run the following command:
+    <code>grep CONFIG_GCC_PLUGIN_RANDSTRUCT /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-87128-5</td>
+<td>Poison kernel stack before returning from syscalls</td>
+<td>This option makes the kernel erase the kernel stack before returning from system calls.
+This has the effect of leaving the stack initialized to the poison value, which both reduces
+the lifetime of any sensitive stack contents and reduces potential for uninitialized stack
+variable exploits or information exposures (it does not cover functions reaching the same
+stack depth as prior functions during the same syscall).
+
+This configuration is available from kernel 4.20, but may be available if backported
+by distros.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_GCC_PLUGIN_STACKLEAK</code>, run the following command:
+    <code>grep CONFIG_GCC_PLUGIN_STACKLEAK /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-87047-7</td>
+<td>Force initialization of variables containing userspace addresses</td>
+<td>While the kernel is built with warnings enabled for any missed stack variable initializations,
+this warning is silenced for anything passed by reference to another function, under the
+occasionally misguided assumption that the function will do the initialization. As this
+regularly leads to exploitable flaws, this plugin is available to identify and zero-initialize
+such variables, depending on the chosen level of coverage.
+This configuration is available from kernel 4.11, but may be available if backported
+by distros.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_GCC_PLUGIN_STRUCTLEAK</code>, run the following command:
+    <code>grep CONFIG_GCC_PLUGIN_STRUCTLEAK /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-87090-7</td>
+<td>zero-init everything passed by reference</td>
+<td>Zero-initialize any stack variables that may be passed by reference and had not already been explicitly initialized.
+This configuration is available from kernel 4.14, but may be available if backported
+by distros.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_GCC_PLUGIN_STRUCTLEAK_BYREF_ALL</code>, run the following command:
+    <code>grep CONFIG_GCC_PLUGIN_STRUCTLEAK_BYREF_ALL /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
 <td>CCE-83987-8</td>
 <td>Ensure rsyslog-gnutls is installed</td>
 <td>TLS protocol support for rsyslog is installed.

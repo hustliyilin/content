@@ -8297,6 +8297,41 @@ The configuration that was used to build kernel is available at <code>/boot/conf
     </td>
 </tr>
 <tr>
+<td>CCE-87034-5</td>
+<td>Generate some entropy during boot and runtime</td>
+<td>Instrument some kernel code to extract some entropy from both original and artificially created
+program state. This will help especially embedded systems where there is little 'natural' source
+of entropy normally.
+
+This configuration is available from kernel 4.9, but may be available if backported
+by distros.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_GCC_PLUGIN_LATENT_ENTROPY</code>, run the following command:
+    <code>grep CONFIG_GCC_PLUGIN_LATENT_ENTROPY /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-87046-9</td>
+<td>Force initialization of variables containing userspace addresses</td>
+<td>While the kernel is built with warnings enabled for any missed stack variable initializations,
+this warning is silenced for anything passed by reference to another function, under the
+occasionally misguided assumption that the function will do the initialization. As this
+regularly leads to exploitable flaws, this plugin is available to identify and zero-initialize
+such variables, depending on the chosen level of coverage.
+This configuration is available from kernel 4.11, but may be available if backported
+by distros.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_GCC_PLUGIN_STRUCTLEAK</code>, run the following command:
+    <code>grep CONFIG_GCC_PLUGIN_STRUCTLEAK /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
 <td>CCE-82859-0</td>
 <td>Ensure rsyslog-gnutls is installed</td>
 <td>TLS protocol support for rsyslog is installed.
