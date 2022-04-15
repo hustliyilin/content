@@ -294,7 +294,7 @@ Kerberos is supported by crypto policy, but it's configuration may be
 set up to ignore it.
 To check that Crypto Policies settings for Kerberos are configured correctly, examine that there is a symlink at
 /etc/krb5.conf.d/crypto-policies targeting /etc/cypto-policies/back-ends/krb5.config.
-If the symlink exists, kerberos is configured to use the system-wide crypto policy settings.</td>
+If the symlink exists, Kerberos is configured to use the system-wide crypto policy settings.</td>
 </tr>
 <tr>
 <td>CCE-83446-5</td>
@@ -2682,7 +2682,7 @@ The <code>auditd</code> service can be enabled with the following command:
 prior to the audit daemon, add the argument <code>audit=1</code> to the default
 GRUB 2 command line for the Linux operating system.
 To ensure that <code>audit=1</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>audit=1</code> to the
+argument to newly installed kernels, add <code>audit=1</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... audit=1 ..."</pre>
@@ -2696,7 +2696,7 @@ Run the following command to update command line for already installed kernels:<
 prior to the audit daemon, add the argument <code>audit_backlog_limit=8192</code> to the default
 GRUB 2 command line for the Linux operating system.
 To ensure that <code>audit_backlog_limit=8192</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>audit_backlog_limit=8192</code> to the
+argument to newly installed kernels, add <code>audit_backlog_limit=8192</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... audit_backlog_limit=8192 ..."</pre>
@@ -6795,7 +6795,7 @@ cp /usr/share/doc/audit*/rules/{10-base-config,11-loginuid,30-ospp-v42,43-module
 <td>On x86 architecture supporting VT-d, the IOMMU manages the access control policy between the hardware devices and some
     of the system critical units such as the memory.
 To ensure that <code>iommu=force</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>iommu=force</code> to the
+argument to newly installed kernels, add <code>iommu=force</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... iommu=force ..."</pre>
@@ -6808,7 +6808,7 @@ Run the following command to update command line for already installed kernels:<
 <td>To configure the kernel to zero out memory before allocating it, add the
 <code>init_on_alloc=1</code> argument to the default GRUB 2 command line.
 To ensure that <code>init_on_alloc=1</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>init_on_alloc=1</code> to the
+argument to newly installed kernels, add <code>init_on_alloc=1</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... init_on_alloc=1 ..."</pre>
@@ -6826,7 +6826,7 @@ There must not exist the boot parameter <code>random.trust_cpu=off</code>. If
 the option is not compiled in, make sure that <code>random.trust_cpu=on</code>
 is configured as a boot parameter.
 To ensure that <code>random.trust_cpu=on</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>random.trust_cpu=on</code> to the
+argument to newly installed kernels, add <code>random.trust_cpu=on</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... random.trust_cpu=on ..."</pre>
@@ -6844,7 +6844,7 @@ Select the appropriate mitigation by adding the argument
 <code>l1tf=<xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref=""></xccdf-1.1:sub></code> to the default
 GRUB 2 command line for the Linux operating system.
 To ensure that <code>l1tf=xccdf_value(var_l1tf_options)</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>l1tf=xccdf_value(var_l1tf_options)</code> to the
+argument to newly installed kernels, add <code>l1tf=xccdf_value(var_l1tf_options)</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... l1tf=xccdf_value(var_l1tf_options) ..."</pre>
@@ -6867,7 +6867,7 @@ To force the kernel to panic on any uncorrected error reported by Machine Check
 set the MCE tolerance to zero by adding <code>mce=0</code>
 to the default GRUB 2 command line for the Linux operating system.
 To ensure that <code>mce=0</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>mce=0</code> to the
+argument to newly installed kernels, add <code>mce=0</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... mce=0 ..."</pre>
@@ -6892,7 +6892,7 @@ Select the appropriate mitigation by adding the argument
 <code>mds=<xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref=""></xccdf-1.1:sub></code> to the default
 GRUB 2 command line for the Linux operating system.
 To ensure that <code>mds=xccdf_value(var_mds_options)</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>mds=xccdf_value(var_mds_options)</code> to the
+argument to newly installed kernels, add <code>mds=xccdf_value(var_mds_options)</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... mds=xccdf_value(var_mds_options) ..."</pre>
@@ -6944,7 +6944,7 @@ Run the following command to update command line for already installed kernels:
 <td>To enable randomization of the page allocator in the kernel, add the
 <code>page_alloc.shuffle=1</code> argument to the default GRUB 2 command line.
 To ensure that <code>page_alloc.shuffle=1</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>page_alloc.shuffle=1</code> to the
+argument to newly installed kernels, add <code>page_alloc.shuffle=1</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... page_alloc.shuffle=1 ..."</pre>
@@ -6958,7 +6958,7 @@ Run the following command to update command line for already installed kernels:<
 add the argument <code>pti=on</code> to the default
 GRUB 2 command line for the Linux operating system.
 To ensure that <code>pti=on</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>pti=on</code> to the
+argument to newly installed kernels, add <code>pti=on</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... pti=on ..."</pre>
@@ -6985,7 +6985,7 @@ Select the appropriate confidence by adding the argument
 <code>rng_core.default_quality=<xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref=""></xccdf-1.1:sub></code> to the default
 GRUB 2 command line for the Linux operating system.
 To ensure that <code>rng_core.default_quality=xccdf_value(var_rng_core_default_quality)</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>rng_core.default_quality=xccdf_value(var_rng_core_default_quality)</code> to the
+argument to newly installed kernels, add <code>rng_core.default_quality=xccdf_value(var_rng_core_default_quality)</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... rng_core.default_quality=xccdf_value(var_rng_core_default_quality) ..."</pre>
@@ -7003,7 +7003,7 @@ kernel heap overflows overwriting objects in merged caches.
 To disable merging of slabs in the Kernel add the argument <code>slab_nomerge=yes</code>
 to the default GRUB 2 command line for the Linux operating system.
 To ensure that <code>slab_nomerge=yes</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>slab_nomerge=yes</code> to the
+argument to newly installed kernels, add <code>slab_nomerge=yes</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... slab_nomerge=yes ..."</pre>
@@ -7028,7 +7028,7 @@ Select the appropriate SSB state by adding the argument
 <code>spec_store_bypass_disable=<xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref=""></xccdf-1.1:sub></code> to the default
 GRUB 2 command line for the Linux operating system.
 To ensure that <code>spec_store_bypass_disable=xccdf_value(var_spec_store_bypass_disable_options)</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>spec_store_bypass_disable=xccdf_value(var_spec_store_bypass_disable_options)</code> to the
+argument to newly installed kernels, add <code>spec_store_bypass_disable=xccdf_value(var_spec_store_bypass_disable_options)</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... spec_store_bypass_disable=xccdf_value(var_spec_store_bypass_disable_options) ..."</pre>
@@ -7050,7 +7050,7 @@ Enforce the Spectre V2 mitigation by adding the argument
 <code>spectre_v2=on</code> to the default
 GRUB 2 command line for the Linux operating system.
 To ensure that <code>spectre_v2=on)</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>spectre_v2=on)</code> to the
+argument to newly installed kernels, add <code>spectre_v2=on)</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... spectre_v2=on) ..."</pre>
@@ -7064,7 +7064,7 @@ Run the following command to update command line for already installed kernels:<
 add the argument <code>vsyscall=none</code> to the default
 GRUB 2 command line for the Linux operating system.
 To ensure that <code>vsyscall=none</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>vsyscall=none</code> to the
+argument to newly installed kernels, add <code>vsyscall=none</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... vsyscall=none ..."</pre>
@@ -7295,6 +7295,22 @@ The configuration that was used to build kernel is available at <code>/boot/conf
     </td>
 </tr>
 <tr>
+<td>CCE-89060-8</td>
+<td>Emulate Privileged Access Never (PAN)</td>
+<td>Enabling this option prevents the kernel from accessing user-space memory directly by pointing
+TTBR0_EL1 to a reserved zeroed area and reserved ASID.
+The user access routines restore the valid TTBR0_EL1 temporarily.
+This configuration is available from kernel 4.10, but may be available if backported
+by distros.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_ARM64_SW_TTBR0_PAN</code>, run the following command:
+    <code>grep CONFIG_ARM64_SW_TTBR0_PAN /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
 <td>CCE-87767-0</td>
 <td>Disable kernel support for MISC binaries</td>
 <td>Enabling <code>CONFIG_BINFMT_MISC</code> makes it possible to plug wrapper-driven binary formats
@@ -7308,6 +7324,20 @@ The configuration that was used to build kernel is available at <code>/boot/conf
     
     Configs with value 'n' are not explicitly set in the file, so either commented lines or no
     lines should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-86096-5</td>
+<td>Enable support for BUG()</td>
+<td>Disabling this option eliminates support for BUG and WARN, reducing the size of your kernel
+image and potentially quietly ignoring numerous fatal conditions. You should only consider
+disabling this option for embedded systems with no facilities for reporting errors.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_BUG</code>, run the following command:
+    <code>grep CONFIG_BUG /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
     </td>
 </tr>
 <tr>
@@ -7441,6 +7471,20 @@ The configuration that was used to build kernel is available at <code>/boot/conf
     </td>
 </tr>
 <tr>
+<td>CCE-88161-5</td>
+<td>Configure low address space to protect from user allocation</td>
+<td>This is the portion of low virtual memory which should be protected from userspace allocation.
+This configuration is available from kernel 3.14, but may be available if backported
+by distros.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_DEFAULT_MMAP_MIN_ADDR</code>, run the following command:
+    <code>grep CONFIG_DEFAULT_MMAP_MIN_ADDR /boot/config-*</code>
+    
+    For each kernel installed, a line with value "65536" should be returned.
+    </td>
+</tr>
+<tr>
 <td>CCE-86948-7</td>
 <td>Disable /dev/kmem virtual device support</td>
 <td>Disable support for the /dev/kmem device.
@@ -7509,6 +7553,19 @@ reboot.
 The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
     To check the configuration value for <code>CONFIG_HIBERNATION</code>, run the following command:
     <code>grep CONFIG_HIBERNATION /boot/config-*</code>
+    
+    Configs with value 'n' are not explicitly set in the file, so either commented lines or no
+    lines should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-88747-1</td>
+<td>Disable IA32 emulation</td>
+<td>Disables support for legacy 32-bit programs under a 64-bit kernel.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_IA32_EMULATION</code>, run the following command:
+    <code>grep CONFIG_IA32_EMULATION /boot/config-*</code>
     
     Configs with value 'n' are not explicitly set in the file, so either commented lines or no
     lines should be returned.
@@ -7595,6 +7652,25 @@ This configuration is available from kernel 5.3.
 The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
     To check the configuration value for <code>CONFIG_LEGACY_VSYSCALL_XONLY</code>, run the following command:
     <code>grep CONFIG_LEGACY_VSYSCALL_XONLY /boot/config-*</code>
+    
+    Configs with value 'n' are not explicitly set in the file, so either commented lines or no
+    lines should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-88828-9</td>
+<td>Disable the LDT (local descriptor table)</td>
+<td>Linux can allow user programs to install a per-process x86 Local Descriptor Table (LDT) using
+the modify_ldt(2) system call. This is required to run 16-bit or segmented code such as DOSEMU
+or some Wine programs. It is also used by some very old threading libraries.
+This configuration is available from kernel 4.3, but may be available if backported
+by distros.
+
+Disable LDT if 16-bit program emulation is not necessary.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_MODIFY_LDT_SYSCALL</code>, run the following command:
+    <code>grep CONFIG_MODIFY_LDT_SYSCALL /boot/config-*</code>
     
     Configs with value 'n' are not explicitly set in the file, so either commented lines or no
     lines should be returned.
@@ -7728,6 +7804,49 @@ The configuration that was used to build kernel is available at <code>/boot/conf
     </td>
 </tr>
 <tr>
+<td>CCE-88592-1</td>
+<td>Remove the kernel mapping in user mode</td>
+<td>This feature reduces the number of hardware side channels by ensuring that the majority of
+kernel addresses are not mapped into userspace.
+This configuration is available from kernel 4.15, but may be available if backported
+by distros.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_PAGE_TABLE_ISOLATION</code>, run the following command:
+    <code>grep CONFIG_PAGE_TABLE_ISOLATION /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-86177-3</td>
+<td>Kernel panic oops</td>
+<td>Enable the kernel to panic when it oopses.
+This has the same effect as setting oops=panic on the kernel command line.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_PANIC_ON_OOPS</code>, run the following command:
+    <code>grep CONFIG_PANIC_ON_OOPS /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-86350-6</td>
+<td>Kernel panic timeout</td>
+<td>Set the timeout value (in seconds) until a reboot occurs when the kernel panics.
+A timeout of 0 configures the system to wait forever. With a timeout value greater than 0,
+the system will wait the specified amount of seconds before rebooting. While a timeout value
+less than 0 makes the system reboot immediately.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_PANIC_TIMEOUT</code>, run the following command:
+    <code>grep CONFIG_PANIC_TIMEOUT /boot/config-*</code>
+    
+    For each kernel installed, a line with value "<xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref="var_kernel_config_panic_timeout"></xccdf-1.1:sub>" should be returned.
+    </td>
+</tr>
+<tr>
 <td>CCE-87106-1</td>
 <td>Disable support for /proc/kkcore</td>
 <td>Provides a virtual ELF core file of the live kernel.
@@ -7738,6 +7857,35 @@ The configuration that was used to build kernel is available at <code>/boot/conf
     
     Configs with value 'n' are not explicitly set in the file, so either commented lines or no
     lines should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-88319-9</td>
+<td>Randomize the address of the kernel image (KASLR)</td>
+<td>In support of Kernel Address Space Layout Randomization (KASLR), this randomizes the physical
+address at which the kernel image is decompressed and the virtual address where the kernel
+image is mapped.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_RANDOMIZE_BASE</code>, run the following command:
+    <code>grep CONFIG_RANDOMIZE_BASE /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-88441-1</td>
+<td>Randomize the kernel memory sections</td>
+<td>Randomizes the base virtual address of kernel memory sections (physical memory mapping,
+vmalloc &amp; vmemmap).
+This configuration is available from kernel 4.8, but may be available if backported
+by distros.
+
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_RANDOMIZE_MEMORY</code>, run the following command:
+    <code>grep CONFIG_RANDOMIZE_MEMORY /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
     </td>
 </tr>
 <tr>
@@ -7910,7 +8058,7 @@ The configuration that was used to build kernel is available at <code>/boot/conf
 </tr>
 <tr>
 <td>CCE-88276-1</td>
-<td>Enale SLUB debugging support</td>
+<td>Enable SLUB debugging support</td>
 <td>SLUB has extensive debug support features and this allows the allocator validation checking to
 be enabled.
 
@@ -7918,8 +8066,7 @@ The configuration that was used to build kernel is available at <code>/boot/conf
     To check the configuration value for <code>CONFIG_SLUB_DEBUG</code>, run the following command:
     <code>grep CONFIG_SLUB_DEBUG /boot/config-*</code>
     
-    Configs with value 'n' are not explicitly set in the file, so either commented lines or no
-    lines should be returned.
+    For each kernel installed, a line with value "y" should be returned.
     </td>
 </tr>
 <tr>
@@ -7991,6 +8138,22 @@ to enable legitimate users to continue to connect, even when your machine is und
 The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
     To check the configuration value for <code>CONFIG_SYN_COOKIES</code>, run the following command:
     <code>grep CONFIG_SYN_COOKIES /boot/config-*</code>
+    
+    For each kernel installed, a line with value "y" should be returned.
+    </td>
+</tr>
+<tr>
+<td>CCE-89180-4</td>
+<td>Unmap kernel when running in userspace (aka KAISER)</td>
+<td>Speculation attacks against some high-performance processors can be used to bypass MMU
+permission checks and leak kernel data to userspace. This can be defended against by unmapping
+the kernel when running in userspace, mapping it back in on exception entry via a trampoline
+page in the vector table.
+This configuration is available from kernel 4.16, but may be available if backported
+by distros.
+The configuration that was used to build kernel is available at <code>/boot/config-*</code>.
+    To check the configuration value for <code>CONFIG_UNMAP_KERNEL_AT_EL0</code>, run the following command:
+    <code>grep CONFIG_UNMAP_KERNEL_AT_EL0 /boot/config-*</code>
     
     For each kernel installed, a line with value "y" should be returned.
     </td>
@@ -8541,7 +8704,7 @@ add or correct the following line in
 add the argument <code>ipv6.disable=1</code> to the default
 GRUB2 command line for the Linux operating system.
 To ensure that <code>ipv6.disable=1</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>ipv6.disable=1</code> to the
+argument to newly installed kernels, add <code>ipv6.disable=1</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... ipv6.disable=1 ..."</pre>
@@ -8877,7 +9040,7 @@ To make sure that the setting is persistent, add the following line to a file in
 </tr>
 <tr>
 <td>CCE-84006-6</td>
-<td>Enable Kernel Parameter to Use TCP Syncookies on IPv4 Interfaces</td>
+<td>Enable Kernel Parameter to Use TCP Syncookies on Network Interfaces</td>
 <td>To set the runtime status of the <code>net.ipv4.tcp_syncookies</code> kernel parameter, run the following command: <pre>$ sudo sysctl -w net.ipv4.tcp_syncookies=1</pre>
 To make sure that the setting is persistent, add the following line to a file in the directory <code>/etc/sysctl.d</code>: <pre>net.ipv4.tcp_syncookies = 1</pre>
 </td>
@@ -10273,7 +10436,7 @@ on AMD-based systems.</td>
 add the argument <code>page_poison=1</code> to the default
 GRUB 2 command line for the Linux operating system.
 To ensure that <code>page_poison=1</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>page_poison=1</code> to the
+argument to newly installed kernels, add <code>page_poison=1</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... page_poison=1 ..."</pre>
@@ -10287,7 +10450,7 @@ Run the following command to update command line for already installed kernels:<
 add the argument <code>slub_debug=P</code> to the default
 GRUB 2 command line for the Linux operating system.
 To ensure that <code>slub_debug=P</code> is added as a kernel command line
-argument to newly installed kernels, ad <code>slub_debug=P</code> to the
+argument to newly installed kernels, add <code>slub_debug=P</code> to the
 default Grub2 command line for Linux operating systems.  Modify the line within
 <code>/etc/default/grub</code> as shown below:
 <pre>GRUB_CMDLINE_LINUX="... slub_debug=P ..."</pre>
