@@ -5,8 +5,10 @@ accounts_password_warn_age_login_defs
 accounts_polyinstantiated_tmp
 accounts_polyinstantiated_var_tmp
 accounts_umask_etc_profile
+aide_build_database
 audit_rules_dac_modification_umount
 audit_rules_immutable
+audit_rules_kernel_module_loading
 audit_rules_sysadmin_actions
 audit_rules_time_adjtimex
 audit_rules_time_clock_settime
@@ -21,6 +23,12 @@ auditd_log_format
 auditd_name_format
 auditd_write_logs
 chronyd_specify_remote_server
+configure_bind_crypto_policy
+configure_crypto_policy
+configure_kerberos_crypto_policy
+configure_libreswan_crypto_policy
+configure_openssl_crypto_policy
+configure_ssh_crypto_policy
 coredump_disable_backtraces
 coredump_disable_storage
 dir_ownership_binary_dirs
@@ -29,6 +37,7 @@ dir_permissions_binary_dirs
 dir_permissions_library_dirs
 directory_access_var_log_audit
 disable_host_auth
+ensure_gpgcheck_globally_activated
 ensure_logrotate_activated
 file_groupowner_backup_etc_group
 file_groupowner_backup_etc_gshadow
@@ -103,6 +112,7 @@ securetty_root_login_console_only
 service_auditd_enabled
 service_chronyd_enabled
 service_cron_enabled
+service_firewalld_enabled
 service_ip6tables_enabled
 service_iptables_enabled
 service_netfs_disabled
