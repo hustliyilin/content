@@ -117,6 +117,7 @@ package_nis_removed
 package_nss-tools_installed
 package_ntp_installed
 package_ntpdate_removed
+package_openldap-clients_removed
 package_openssh-server_installed
 package_openssh-server_removed
 package_rsyslog_installed
@@ -136,7 +137,14 @@ rsyslog_files_permissions
 rsyslog_remote_loghost
 securetty_root_login_console_only
 selinux_state
+service_abrtd_disabled
+service_atd_disabled
+service_autofs_disabled
 service_netfs_disabled
+service_ntpdate_disabled
+service_oddjobd_disabled
+service_qpidd_disabled
+service_rdisc_disabled
 service_sshd_disabled
 sshd_allow_only_protocol2
 sshd_disable_compression

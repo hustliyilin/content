@@ -165,7 +165,10 @@ rsyslog_files_ownership
 rsyslog_files_permissions
 rsyslog_remote_loghost
 selinux_state
+service_abrtd_disabled
+service_atd_disabled
 service_auditd_enabled
+service_autofs_disabled
 service_chronyd_enabled
 service_chronyd_or_ntpd_enabled
 service_cron_enabled
@@ -175,6 +178,10 @@ service_iptables_enabled
 service_netfs_disabled
 service_ntp_enabled
 service_ntpd_enabled
+service_ntpdate_disabled
+service_oddjobd_disabled
+service_qpidd_disabled
+service_rdisc_disabled
 service_rsyslog_enabled
 service_sshd_disabled
 service_syslogng_enabled
