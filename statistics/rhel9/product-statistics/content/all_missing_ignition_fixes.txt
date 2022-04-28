@@ -1057,6 +1057,7 @@ selinux_confinement_of_daemons
 selinux_policytype
 selinux_state
 selinux_user_login_roles
+service_atd_disabled
 service_auditd_enabled
 service_autofs_disabled
 service_avahi-daemon_disabled

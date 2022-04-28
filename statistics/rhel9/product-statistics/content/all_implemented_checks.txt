@@ -1004,6 +1004,7 @@ selinux_all_devicefiles_labeled
 selinux_confinement_of_daemons
 selinux_policytype
 selinux_state
+service_atd_disabled
 service_auditd_enabled
 service_autofs_disabled
 service_avahi-daemon_disabled

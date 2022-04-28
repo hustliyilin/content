@@ -13689,6 +13689,19 @@ The <code>crond</code> service can be enabled with the following command:
 </td>
 </tr>
 <tr>
+<td>CCE-84164-3</td>
+<td>Disable At Service (atd)</td>
+<td>The <code>at</code> and <code>batch</code> commands can be used to
+schedule tasks that are meant to be executed only once. This allows delayed
+execution in a manner similar to cron, except that it is not
+recurring. The daemon <code>atd</code> keeps track of tasks scheduled via
+<code>at</code> and <code>batch</code>, and executes them at the specified time.
+
+The <code>atd</code> service can be disabled with the following command:
+<pre>$ sudo systemctl mask --now atd.service</pre>
+</td>
+</tr>
+<tr>
 <td>CCE-84177-5</td>
 <td>Verify Group Who Owns cron.d</td>
 <td>
