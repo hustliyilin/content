@@ -32,6 +32,7 @@ identifiers:
     cce@rhel9: CCE-84106-4
 
 references:
+    cis@alinux2: 2.1.2
     cis@rhel7: 2.2.2
     cis@rhel8: 2.2.2
     cis@sle12: 2.2.2

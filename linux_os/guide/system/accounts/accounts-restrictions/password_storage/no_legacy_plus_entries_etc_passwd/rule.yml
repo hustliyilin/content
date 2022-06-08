@@ -21,6 +21,7 @@ identifiers:
     cce@rhel9: CCE-83620-5
 
 references:
+    cis@alinux2: 6.2.2
     cis@rhel7: 6.2.2
     cis@rhel8: 6.2.2
     cis@sle15: 6.2.2

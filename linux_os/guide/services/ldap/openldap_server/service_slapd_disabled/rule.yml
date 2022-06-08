@@ -18,6 +18,7 @@ identifiers:
     cce@rhel9: CCE-87263-0
 
 references:
+    cis@alinux2: 2.1.6
     cis@rhel8: 2.2.14
 
 ocil_clause: |-

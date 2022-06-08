@@ -21,6 +21,7 @@ identifiers:
     cce@rhel9: CCE-86850-5
 
 references:
+    cis@alinxu2: 5.1.8
     cis@rhel7: 5.1.8
     cis@rhel8: 5.1.8
     cis@sle15: 5.1.8

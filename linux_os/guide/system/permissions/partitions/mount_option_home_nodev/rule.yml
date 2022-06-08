@@ -28,6 +28,7 @@ identifiers:
 
 references:
     anssi: BP28(R12)
+    cis@alinux2: 1.1.14
     cis@rhel7: 1.1.18
     cis@rhel8: 1.1.14
     cis@sle12: 1.1.18

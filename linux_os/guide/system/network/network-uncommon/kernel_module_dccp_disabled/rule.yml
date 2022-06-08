@@ -23,6 +23,7 @@ identifiers:
 
 references:
     cis-csc: 11,14,3,9
+    cis@alinux2: 3.4.1
     cis@rhel7: 3.4.1
     cis@rhel8: 3.3.1
     cis@sle12: 3.4.1
